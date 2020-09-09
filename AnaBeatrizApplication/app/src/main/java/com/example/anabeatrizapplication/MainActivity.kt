@@ -17,9 +17,13 @@ class MainActivity : AppCompatActivity() {
     fun calculateGrade(componente: View) {
 
         //"gets"
-        val userName = name.text.toString()
-        val grade1 =  test_grade_1.text.toString().toDouble()
-        val grade2 =  test_grade_2.text.toString().toDouble()
+        var userName:String? = null
+        var grade1:Double? = null
+        var grade2:Double? = null
+
+        userName = name.text.toString()
+        grade1 =  test_grade_1.text.toString().toDouble()
+        grade2 =  test_grade_2.text.toString().toDouble()
 
 
         //variáveis para validação
@@ -31,7 +35,6 @@ class MainActivity : AppCompatActivity() {
 
         //conta
         val result = (( grade1 + grade2 ) / 2)
-
 
         //validação dos valores
         if ( userName.length < 3) {
@@ -64,11 +67,11 @@ class MainActivity : AppCompatActivity() {
 
         // mostrar mensagem
         if ( anyValueIsNull == false && firstValueIsCorrect && secondValueIsCorrect && thirdValueIsCorrect ) {
-            if ( result >= 0 && result <= 4 ) {
+            if ( result >= 0 && result <= 4.9 ) {
                 result_text.visibility = View.VISIBLE
                 result_text.text = "${  userName }, sua média foi ${result} e infelizmente você foi reprovad(a). A substutiva será realizada dia 16/09, organize sua agenda para estar presente."
                 result_text.setTextColor(Color.parseColor("#EB4A40"))
-            } else if ( result >= 5 && result <=7 ) {
+            } else if ( result >= 5 && result <=7.9 ) {
                 result_text.visibility = View.VISIBLE
                 result_text.text = "${ userName }, sua média foi ${result}. Parabéns, você foi aprovado(a)! Aproveite as férias para estudar ainda mais! Nos vemos ano que vem :)"
                 result_text.setTextColor(Color.parseColor("#9A00C4"))
