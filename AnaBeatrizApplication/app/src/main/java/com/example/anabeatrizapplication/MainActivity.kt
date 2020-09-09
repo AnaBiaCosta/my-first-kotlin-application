@@ -18,8 +18,8 @@ class MainActivity : AppCompatActivity() {
 
         //"gets"
         val userName = name.text.toString()
-        val grade1 =  test_grade_1.text.toString().toInt()
-        val grade2 =  test_grade_2.text.toString().toInt()
+        val grade1 =  test_grade_1.text.toString().toDouble()
+        val grade2 =  test_grade_2.text.toString().toDouble()
 
 
         //variáveis para validação
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
 
         //conta
-        val result = (( grade1 + grade2 ) / 2).toDouble()
+        val result = (( grade1 + grade2 ) / 2)
 
 
         //validação dos valores
